@@ -1,0 +1,124 @@
+<!-- index.html -->
+{% extends "base.html" %}
+
+{% load static %}
+{% block css_link %} 
+    <link href="{% static 'assets/css/index.css' %}" rel="stylesheet"> 
+{% endblock%}
+
+{% block menu_list %}
+    <li><a href="#video">Video</a></li>
+    <li><a href="#podcast">Podcast</a></li>
+{% endblock %}
+
+{% block hero_section %} 
+    <div class="hero-container" data-aos="fade-up">
+        <h1>Welcome to music blog</h1>
+        <h2>We are glade to share the classical music with you!!</h2>
+        <a href="/about" class="btn-get-started scrollto">About me</a>
+    </div>
+{% endblock %} 
+
+{% block main_section %} 
+    <!-- ======= video Section ======= -->
+    <section id="video" class="video">
+        <div class="container">
+
+            <div class="row gy-3"  data-aos="fade-up">
+
+            <div class="col-md-12 text-center heading">
+                <i class='bi bi-music-note-beamed h3'></i> &emsp;
+                <h2 class="font-weight-bold text-black">Recent Video</h2>
+            </div>
+            
+            {% for vdo, tm_stamp in vdo_info %}
+                <div class="col-lg-4 video-box align-self-center position-relative">
+                    <img src="{% static 'assets/img/video.jpg' %}" class="img-fluid img-thumbnail" alt="">
+                    <a href="{{ vdo.vdo_url }}" class="glightbox play-btn mb-4"></a>
+                </div>
+
+                <div class="col-lg-8 pt-3 pt-lg-0 align-self-center position-relative">
+                    <h3>{{ vdo.title | title }}</h3>
+                    <p>
+                        {% if vdo.description %}
+                            {{ vdo.description | title }} 
+                        {% endif %}
+                    </p>
+                    <ul>
+                    {% for tm in tm_stamp %}
+                        <li><i class='bi bi-music-note h5'></i> {{ tm }} </li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            {% endfor %}
+
+            </div>
+
+        </div>
+    </section><!-- End Video Section -->
+    
+    <!-- ======= Podcast Section ======= -->
+    <section id="podcast" class="podcast">
+        <div class="container">
+
+            <div class="row mb-5" data-aos="fade-up">
+            <div class="col-md-12 text-center heading">
+                <i class='bi bi-broadcast-pin h3' ></i> &emsp;
+                <h2 class="font-weight-bold text-black">Recent Podcasts</h2>
+            </div>
+            </div>
+            
+            <!-- datetime format into english-->
+            {% load i18n %}
+            {% for pod in pod_info %}
+                <div class="d-block d-md-flex podcast-entry bg-white mb-5" data-aos="fade-up">
+                <div class="image" style='background-image: url("{% static "assets/img/podcast.jpg" %}");'></div>
+                <div class="text">
+
+                    <h3 class="font-weight-light"><a href="single-post.html">{{ pod.title | title }}</a></h3>
+                    <div>
+                        <span class="text-black-opacity-05">
+                        <small> By {{ pod.podcaster | title }} <span class="sep">/</span>
+                            <!-- datetime format into english-->
+                            {% language 'en' %}
+                                {{ pod.record_stamp |  date:'D, d N H:i'}} 
+                            {% endlanguage %}
+                        </small>
+                    </div>
+                    
+                    <p class="mb-4">{{ pod.description }}</p>
+
+                    <div class="player">
+                    <audio id="player2" preload="none" controls style="max-width: 100%">
+                        <source src="{{ pod.pod_url }}" type="audio/mp3">
+                    </audio>
+                    </div>
+
+                </div>
+                </div>
+            {% endfor %}
+
+        </div>
+
+        <!-- Pagination -->
+        <div class="container" data-aos="fade-up">
+            <div class="row">
+            <div class="col-md-12 text-center">
+                <div class="page-block">
+                <ul>
+                    <li><a href="#">&lt;</a></li>
+                    <li class="active"><span>1</span></li>
+                    <!-- <li><a href="#">2</a></li> -->
+                    <li><a href="#">&gt;</a></li>
+                </ul>
+                </div>
+            </div>
+            </div>
+        </div>
+
+    </section> <!-- End Podcast Section -->
+{% endblock %}
+
+{% block js_link %}
+    <!-- no the other special vendor js is required -->
+{% endblock %}

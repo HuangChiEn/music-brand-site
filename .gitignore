@@ -1,0 +1,8 @@
+.bkup/*
+*/__pycache__
+
+# keep private data in local
+*/*.secret
+
+# we do upload sqlit db (only contain few examples) to github
+#*.sqlite3

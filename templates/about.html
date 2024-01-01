@@ -1,0 +1,153 @@
+<!-- about.html -->
+{% extends "base.html" %}
+
+{% load static %}
+{% block css_link %} 
+    <link href="{% static 'assets/css/about.css' %}" rel="stylesheet"> 
+{% endblock%}
+
+{% block menu_list %}
+    <li><a href="#about">About my story</a></li>
+    <li><a href="#img-gallery">Image gallery</a></li>
+{% endblock %}
+
+{% block hero_section %} 
+    <div id="abt-hero" class="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Hello ~ I'm <span class="typed" data-typed-items="Jazz player, Music Lover, Podcaster"></span></h1>
+                <h3>You can trace my action on social media..</h3>
+
+                <ul class="list-unstyled list-social">
+                    <li><a href="https://www.youtube.com/@coffeerelaxingjazz"><i class="bi bi-youtube fs-2"></i></a></li>
+                    <li><a href="https://www.facebook.com/groups/2397304717053780"><i class="bi bi-facebook fs-2"></i></a></li>
+                </ul>
+            </div>
+        </div>
+  </div>
+{% endblock %} 
+
+{% block main_section %} 
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+        <div class="container" data-aos="fade-up">
+          
+            <div class="row justify-content-between">
+
+                <div class="col-lg-4 ">
+                    <div class="div-img-bg">
+                        <div class="about-img">
+                            <img src="{% static 'assets/img/me.jpg' %}" class="img-responsive" alt="me">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="about-descr">
+                        <!-- fake degree generation -->
+                        <p class="p-heading">
+                            Sign event specific spend industry. Outside garden century finish call defense system.
+                            Floor green reason four raise building born wide. Garden a ability economic trouble identify nice。
+                        </p>
+
+                        <!-- fake career generation -->
+                        <p class="separator">
+                            Interesting assume area southern. Painting establish enter me could still notice remember. Line pretty movement hair. Finish conference third not.
+                            Through half card matter discussion wish decision. Deal national space stage billion. Sister language media week industry. 
+                            College theory sing least live performance. Mind someone fund. Threat people same. 
+                            Management idea stand move range.\nSame window customer great politics site send suffer. Never include win long.
+                        </p>
+                    </div>
+                <div>
+
+            </div>
+
+        </div>
+    </section><!-- End About Section -->
+
+    <!-- Image Gallery -->
+    <section id="img-gallery" class="img-gallery container" data-aos="fade-up">
+        <div class="row">
+            <h1>My Photo Gallery</h1>
+            <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+            <div class="pop-msg">
+                <img
+                src="{% static 'assets/img/gallery/001.jpg' %}"
+                class="w-100 shadow-1-strong rounded mb-4"
+                alt="Boat on Calm Water"
+                />
+                <span class="title">Lorem ipsum dolor</span>
+                <span class="text">Morbi diam viverra mattis sociis magna, habitasse penatibus non lectus</span>
+            </div>
+
+            <div class="pop-msg">
+                <img
+                src="{% static 'assets/img/gallery/002.jpg' %}"
+                class="w-100 shadow-1-strong rounded mb-4"
+                alt="Wintry Mountain Landscape"
+                />
+                <span class="title">Lorem ipsum dolor</span>
+                <span class="text">Morbi diam viverra mattis sociis magna, habitasse penatibus non lectus</span>
+            </div>
+
+            <div class="pop-msg">
+                <img
+                src="{% static 'assets/img/gallery/004.jpg' %}"
+                class="w-100 shadow-1-strong rounded mb-4"
+                alt="Wintry Mountain Landscape"
+                />
+                <span class="title">Lorem ipsum dolor</span>
+                <span class="text">Morbi diam viverra mattis sociis magna, habitasse penatibus non lectus</span>
+            </div>
+
+            </div>
+        
+            <div class="col-lg-4 mb-4 mb-lg-0">
+            <div class="pop-msg">
+                <img
+                src="{% static 'assets/img/gallery/003.jpg' %}"
+                class="w-100 shadow-1-strong rounded mb-4"
+                alt="Boat on Calm Water"
+                />
+                <span class="title">Lorem ipsum dolor</span>
+                <span class="text">Morbi diam viverra mattis sociis magna, habitasse penatibus non lectus</span>
+            </div>
+            <div class="pop-msg">
+                <img
+                src="{% static 'assets/img/gallery/001.jpg' %}"
+                class="w-100 shadow-1-strong rounded mb-4"
+                alt="Boat on Calm Water"
+                />
+                <span class="title">Lorem ipsum dolor</span>
+                <span class="text">Morbi diam viverra mattis sociis magna, habitasse penatibus non lectus</span>
+            </div>
+            </div>
+        
+            <div class="col-lg-4 mb-4 mb-lg-0">
+            <div class="pop-msg">
+                <img
+                src="{% static 'assets/img/gallery/001.jpg' %}"
+                class="w-100 shadow-1-strong rounded mb-4"
+                alt="Boat on Calm Water"
+                />
+                <span class="title">Lorem ipsum dolor</span>
+                <span class="text">Morbi diam viverra mattis sociis magna, habitasse penatibus non lectus</span>
+            </div>
+
+            <div class="pop-msg">
+                <img
+                src="{% static 'assets/img/gallery/002.jpg' %}"
+                class="w-100 shadow-1-strong rounded mb-4"
+                alt="Wintry Mountain Landscape"
+                />
+                <span class="title">Lorem ipsum dolor</span>
+                <span class="text">Morbi diam viverra mattis sociis magna, habitasse penatibus non lectus</span>
+            </div>
+        </div>
+        
+    </section>
+{% endblock %}
+
+{% block js_link %}
+    <script src="{% static 'assets/vendor/typed.js/typed.umd.js' %}"></script>
+{% endblock %}
