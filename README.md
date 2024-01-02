@@ -15,6 +15,7 @@ The key feature of music blog are as follows:
 - The admin interface allow the user add the new video, podcast.
 - Structured template easily reflect update of video and podcast.
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg/)]()
 
 ## Installation
 ```bash
